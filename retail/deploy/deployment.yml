@@ -1,0 +1,13 @@
+$schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
+name: retail-customer-churn-v1
+endpoint_name: retail-customer-churn-endpoint
+model:
+  path: ../artefacts/
+code_configuration:
+  code: .
+  scoring_script: score.py
+environment:
+  conda_file: environment.yml
+  image: mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu20.04:latest
+instance_type: Standard_DS2_v2
+instance_count: 1
