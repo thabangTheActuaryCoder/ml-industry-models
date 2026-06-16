@@ -1,0 +1,97 @@
+{
+  "model_name": "credit_scoring_model",
+  "created_at": "2026-06-16T15:37:09.866740+00:00",
+  "sklearn_pipeline_steps": [
+    "preprocessor",
+    "classifier"
+  ],
+  "classifier_type": "GradientBoostingClassifier",
+  "classifier_params": {
+    "ccp_alpha": 0.0,
+    "criterion": "friedman_mse",
+    "init": null,
+    "learning_rate": 0.1,
+    "loss": "log_loss",
+    "max_depth": 4,
+    "max_features": null,
+    "max_leaf_nodes": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "n_estimators": 200,
+    "n_iter_no_change": null,
+    "random_state": 42,
+    "subsample": 1.0,
+    "tol": 0.0001,
+    "validation_fraction": 0.1,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "metrics": {
+    "accuracy": 0.898,
+    "precision": 0.782312925170068,
+    "recall": 0.6216216216216216,
+    "f1": 0.6927710843373494,
+    "roc_auc": 0.8917609020063009,
+    "confusion_matrix": [
+      [
+        1566,
+        64
+      ],
+      [
+        140,
+        230
+      ]
+    ],
+    "classification_report": "              precision    recall  f1-score   support\n\n  No Default       0.92      0.96      0.94      1630\n     Default       0.78      0.62      0.69       370\n\n    accuracy                           0.90      2000\n   macro avg       0.85      0.79      0.82      2000\nweighted avg       0.89      0.90      0.89      2000\n",
+    "classification_report_dict": {
+      "No Default": {
+        "precision": 0.917936694021102,
+        "recall": 0.9607361963190184,
+        "f1-score": 0.9388489208633094,
+        "support": 1630.0
+      },
+      "Default": {
+        "precision": 0.782312925170068,
+        "recall": 0.6216216216216216,
+        "f1-score": 0.6927710843373494,
+        "support": 370.0
+      },
+      "accuracy": 0.898,
+      "macro avg": {
+        "precision": 0.850124809595585,
+        "recall": 0.7911789089703201,
+        "f1-score": 0.8158100026003294,
+        "support": 2000.0
+      },
+      "weighted avg": {
+        "precision": 0.8928462967836608,
+        "recall": 0.898,
+        "f1-score": 0.8933245211060067,
+        "support": 2000.0
+      }
+    }
+  },
+  "industry": "banking",
+  "use_case": "credit_scoring",
+  "target_column": "target",
+  "features_numeric": [
+    "age",
+    "annual_income",
+    "employment_years",
+    "loan_amount",
+    "credit_score",
+    "num_late_payments",
+    "debt_to_income_ratio",
+    "num_open_accounts",
+    "months_since_last_delinquency"
+  ],
+  "features_categorical": [
+    "education_level",
+    "employment_type",
+    "province"
+  ],
+  "train_samples": 8000,
+  "test_samples": 2000
+}

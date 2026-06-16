@@ -1,0 +1,99 @@
+{
+  "model_name": "equipment_failure_model",
+  "created_at": "2026-06-16T15:38:07.336452+00:00",
+  "sklearn_pipeline_steps": [
+    "preprocessor",
+    "classifier"
+  ],
+  "classifier_type": "GradientBoostingClassifier",
+  "classifier_params": {
+    "ccp_alpha": 0.0,
+    "criterion": "friedman_mse",
+    "init": null,
+    "learning_rate": 0.1,
+    "loss": "log_loss",
+    "max_depth": 5,
+    "max_features": null,
+    "max_leaf_nodes": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "n_estimators": 250,
+    "n_iter_no_change": null,
+    "random_state": 42,
+    "subsample": 1.0,
+    "tol": 0.0001,
+    "validation_fraction": 0.1,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "metrics": {
+    "accuracy": 0.9336666666666666,
+    "precision": 0.7509727626459144,
+    "recall": 0.5884146341463414,
+    "f1": 0.6598290598290598,
+    "roc_auc": 0.946518548269315,
+    "confusion_matrix": [
+      [
+        2608,
+        64
+      ],
+      [
+        135,
+        193
+      ]
+    ],
+    "classification_report": "              precision    recall  f1-score   support\n\n Operational       0.95      0.98      0.96      2672\n     Failure       0.75      0.59      0.66       328\n\n    accuracy                           0.93      3000\n   macro avg       0.85      0.78      0.81      3000\nweighted avg       0.93      0.93      0.93      3000\n",
+    "classification_report_dict": {
+      "Operational": {
+        "precision": 0.9507838133430551,
+        "recall": 0.9760479041916168,
+        "f1-score": 0.9632502308402585,
+        "support": 2672.0
+      },
+      "Failure": {
+        "precision": 0.7509727626459144,
+        "recall": 0.5884146341463414,
+        "f1-score": 0.6598290598290598,
+        "support": 328.0
+      },
+      "accuracy": 0.9336666666666666,
+      "macro avg": {
+        "precision": 0.8508782879944847,
+        "recall": 0.7822312691689791,
+        "f1-score": 0.8115396453346592,
+        "support": 3000.0
+      },
+      "weighted avg": {
+        "precision": 0.928937805133501,
+        "recall": 0.9336666666666666,
+        "f1-score": 0.9300761828097008,
+        "support": 3000.0
+      }
+    }
+  },
+  "industry": "mining",
+  "use_case": "equipment_failure_prediction",
+  "target_column": "target",
+  "features_numeric": [
+    "temperature_celsius",
+    "vibration_mm_s",
+    "oil_pressure_kpa",
+    "rpm",
+    "operating_hours",
+    "days_since_maintenance",
+    "load_percentage",
+    "ambient_temperature_celsius",
+    "hydraulic_pressure_kpa",
+    "num_previous_failures"
+  ],
+  "features_categorical": [
+    "equipment_type",
+    "mine_type",
+    "shift",
+    "province"
+  ],
+  "train_samples": 12000,
+  "test_samples": 3000
+}
